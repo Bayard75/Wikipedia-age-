@@ -13,7 +13,7 @@ Ensuite sous Windows :
 env\Scripts\activate
 pip install -r requirements.txt
 Puis
-python script\script.py
+python age.py
 ========
 ##Créer un fichier txt avec les noms
 Crée ensuite un fichier .txt(bloc note) avec la liste des noms voulus (sans accent)
