@@ -14,3 +14,9 @@ env\Scripts\activate
 pip install -r requirements.txt
 Puis
 python script\script.py
+========
+##Créer un fichier txt avec les noms
+Crée ensuite un fichier .txt(bloc note) avec la liste des noms voulus (sans accent)
+Dans le meme dossier que Wikipedia-age
+====
+Lancer le programme
