@@ -6,12 +6,14 @@ URL ='https://fr.wikipedia.org/w/api.php'
 
 mois_chiffre = {"janvier": 1,
                 "fevrier": 2,
+                "février":2,
                 "mars": 3,
                 "avril": 4,
                 "mai": 5,
                 "juin": 6,
                 "juillet": 7,
                 "aout": 8,
+                "août": 8,
                 "septembre": 9,
                 "octobre": 10,
                 "novembre": 11,
@@ -57,7 +59,6 @@ def get_summary(page_id):
 
         
         response = requests.get(URL, params=PARAMS)
-        print(response)
         data = response.json()
         resume = data["query"]["pages"][page_id]["extract"]
         return resume
@@ -100,8 +101,6 @@ def ouvrir_fichier(nom_fichier):
     '''Fonction qui prend en parametre un fichier
     et renvoie les noms sous forme de list'''
 
-    accent = ['é','è','ü','à','ù','â','ê','î','ô',]
-    sans_accent =['e','e','u','a','u','a','e','i','o']
     with open(nom_fichier + '.txt','r') as fichier:
         liste_noms =[]
         for noms in fichier:
@@ -111,13 +110,6 @@ def ouvrir_fichier(nom_fichier):
     for ligne, nom in enumerate(liste_noms):
             liste_noms[ligne] = nom.strip()
 
-    for position_mot, nom in enumerate(liste_noms):  
-        for lettre in nom:
-            if lettre in accent:
-                position_accent = accent.index(lettre)
-                lettre_sans_accent = sans_accent[position_accent]
-                liste_noms[nom] = nom.replace(lettre,lettre_sans_accent)
-    print(liste_noms)
     return liste_noms
 
 
